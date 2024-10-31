@@ -21,7 +21,8 @@
 .hero h1 {
     font-size: 2.5rem;
     font-weight: 500;
-    margin: -50px 0 50px;
+    margin-top: -30px;
+    margin-bottom: 30px;
 }
 
 .hero h1 span {
@@ -31,16 +32,16 @@
 textarea {
     width: 100%;
     max-width: 600px;
-    height: 250px;
+    height: 200px;
     background: #403d84;
     color: #fff;
     font-size: 1rem;
     border: 0;
     outline: 0;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     resize: none;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 textarea::placeholder {
@@ -53,21 +54,24 @@ textarea::placeholder {
     max-width: 600px;
     display: flex;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
+    flex-direction: column;
 }
 
 button {
     background: #ff2963;
     color: #fff;
     font-size: 1rem;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 35px;
     border: 0;
     outline: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 200px;
 }
 
 button img {
@@ -85,44 +89,30 @@ select {
     border: 0;
     border-radius: 35px;
     appearance: none;
+    width: 100%;
+    max-width: 200px;
     background-image: url(images/dropdown.png);
     background-repeat: no-repeat;
     background-size: 15px;
-    background-position-x: calc(100% - 20px);
-    background-position-y: 20px;
+    background-position: right 20px center;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .hero h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
-    textarea {
-        width: 100%;
-        max-width: 100%;
-        height: 200px;
-    }
+    
     .row {
-        width: 100%;
+        flex-direction: row;
+        gap: 20px;
     }
-    button {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-    }
-}
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
     textarea {
-        height: 180px;
+        height: 250px;
     }
-    button {
-        font-size: 0.8rem;
-        padding: 8px 15px;
-    }
-    select {
-        font-size: 0.9rem;
+
+    button, select {
+        width: auto;
+        max-width: none;
     }
 }
