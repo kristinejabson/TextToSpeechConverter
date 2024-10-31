@@ -1,11 +1,11 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-.hero{
+.hero {
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(45deg, #010758, #490d61);
@@ -14,25 +14,27 @@
     justify-content: center;
     flex-direction: column;
     color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
-.hero h1{
-    font-size: 45px;
+.hero h1 {
+    font-size: 2.5rem;
     font-weight: 500;
-    margin-top: -50px;
-    margin-bottom: 50px;
+    margin: -50px 0 50px;
 }
 
-.hero h1 span{
+.hero h1 span {
     color: #ff2963;
 }
 
-textarea{
-    width: 600px;
+textarea {
+    width: 100%;
+    max-width: 600px;
     height: 250px;
     background: #403d84;
     color: #fff;
-    font-size: 15px;
+    font-size: 1rem;
     border: 0;
     outline: 0;
     padding: 20px;
@@ -41,22 +43,24 @@ textarea{
     margin-bottom: 30px;
 }
 
-textarea::placeholder{
-    font-size: 16px;
+textarea::placeholder {
+    font-size: 1rem;
     color: #ddd;
 }
 
-.row{
-    width: 600px;
+.row {
+    width: 100%;
+    max-width: 600px;
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-button{
+button {
     background: #ff2963;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
     padding: 10px 30px;
     border-radius: 35px;
     border: 0;
@@ -66,12 +70,12 @@ button{
     align-items: center;
 }
 
-button img{
+button img {
     width: 16px;
     margin-right: 10px;
 }
 
-select{
+select {
     flex: 1;
     color: #fff;
     background: #403d84;
@@ -86,4 +90,39 @@ select{
     background-size: 15px;
     background-position-x: calc(100% - 20px);
     background-position-y: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+    }
+    .row {
+        width: 100%;
+    }
+    button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    textarea {
+        height: 180px;
+    }
+    button {
+        font-size: 0.8rem;
+        padding: 8px 15px;
+    }
+    select {
+        font-size: 0.9rem;
+    }
 }
