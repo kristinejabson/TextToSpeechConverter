@@ -1,18 +1,28 @@
 let speech = new SpeechSynthesisUtterance();
-
 let voices = [];
-
 let voiceSelect = document.querySelector("select");
 
-window.speechSynthesis.onvoiceschanged = () => {
-    voices = window.speechSynthesis.getVoices();
-    speech.voice = voices[0];
 
-    voices.forEach((voice, i) => (voiceSelect.options[i] = new Option(voice.
-    name, i )));
-};
+function populateVoiceOptions() {
+    voiceSelect.innerHTML = ""; 
+    voices.forEach((voice, i) => {
+        voiceSelect.options[i] = new Option(voice.name, i);
+    });
+    speech.voice = voices[0]; 
+}
 
-voiceSelect.addEventListener("change", () =>{
+voices = window.speechSynthesis.getVoices();
+if (voices.length > 0) {
+    populateVoiceOptions();
+} else {
+    // If no voices are initially loaded, set an event listener
+    window.speechSynthesis.onvoiceschanged = () => {
+        voices = window.speechSynthesis.getVoices();
+        populateVoiceOptions();
+    };
+}
+
+voiceSelect.addEventListener("change", () => {
     speech.voice = voices[voiceSelect.value];
 });
 
