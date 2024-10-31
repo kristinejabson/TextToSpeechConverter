@@ -8,6 +8,8 @@ function loadVoices() {
     if (voices.length) {
         populateVoiceOptions();
         speech.voice = voices[0];
+    } else {
+        setTimeout(loadVoices, 500);
     }
 }
 
